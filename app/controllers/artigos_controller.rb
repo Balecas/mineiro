@@ -8,5 +8,20 @@ class ArtigosController < ApplicationController
         @artigos = Artigo.all
     end
 
+    def new
+      @artigo = Artigo.new 
+
+    end
+
+    def create
+      @artigo = Artigo.new(params.require(:artigo).permit(:nome, :descricao))
+      if @artigo.save 
+        flash[:notice] = "Artigo criado com sucesso"
+        redirect_to @artigo
+      else
+        render :new, status: :unprocessable_entity
+      end
+    end
+
 
 end
