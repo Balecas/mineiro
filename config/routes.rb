@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get '/teste', to: 'paginas#teste'
 
+  resources :artigos, only: [:show]
+  
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
