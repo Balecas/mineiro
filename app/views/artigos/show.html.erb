@@ -2,3 +2,9 @@
 
 <p><strong>Nome: </strong><%= @artigo.nome %></p>
 <p><strong>Descrição: </strong><%= @artigo.descricao %></p>
+
+<p>
+    <%= link_to 'Editar', edit_artigo_path(@artigo) %> |
+    <%= link_to 'Apagar', artigo_path(@artigo), data: {turbo_method: :delete, turbo_confirm: "Tem a certeza que pretende apagar o artigo?"} %> |
+    <%= link_to 'Voltar', artigos_path %>
+</p>

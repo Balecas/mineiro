@@ -4,7 +4,7 @@
         <tr>
             <th>Nome</th>
             <th>Descrição</th>
-            <th>Acção</th>
+            <th colspan= 3>Acção</th>
         </tr>
     </thead>
 
@@ -14,8 +14,13 @@
             <td><%= artigo.nome %></td>
             <td><%= artigo.descricao %></td>
             <td><%= link_to 'Mostrar', artigo_path(artigo) %></td>
-            <td><%= button_to 'Apagar', artigo_path(artigo), method: :delete %></td>
+            <td><%= link_to 'Editar', edit_artigo_path(artigo) %></td>
+            <td><%= link_to 'Apagar', artigo_path(artigo), data: {turbo_method: :delete, turbo_confirm: "Tem a certeza que pretende apagar o artigo?"} %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
+
+<p>
+    <%= link_to 'Criar Artigo', new_artigo_path %>
+</p>
