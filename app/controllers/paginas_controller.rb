@@ -3,6 +3,4 @@ class PaginasController < ApplicationController
       
     end
 
-    def teste
-    end
 end

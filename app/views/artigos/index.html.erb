@@ -13,7 +13,8 @@
         <tr>
             <td><%= artigo.nome %></td>
             <td><%= artigo.descricao %></td>
-            <td>Placeholder</td>
+            <td><%= link_to 'Mostrar', artigo_path(artigo) %></td>
+            <td><%= button_to 'Apagar', artigo_path(artigo), method: :delete %></td>
         </tr>
         <% end %>
     </tbody>

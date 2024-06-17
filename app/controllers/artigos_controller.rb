@@ -31,9 +31,6 @@ class ArtigosController < ApplicationController
     end
 
 
-
-
-
     def update
       @artigo = Artigo.find(params[:id])
       if @artigo.update(params.require(:artigo).permit(:nome, :descricao))
@@ -44,5 +41,11 @@ class ArtigosController < ApplicationController
       end
     end
 
+    def destroy
+      @artigo = Artigo.find(params[:id])
+      @artigo.destroy
+      redirect_to artigos_path
+
+    end
 
 end

@@ -5,10 +5,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   root 'paginas#home'
 
-  get '/teste', to: 'paginas#teste'
-
-  resources :artigos, only: [:show, :index, :new, :create, :edit, :update]
-  
+  resources :artigos
 
   # Defines the root path route ("/")
   # root "posts#index"
