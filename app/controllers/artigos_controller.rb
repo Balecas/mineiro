@@ -13,6 +13,13 @@ class ArtigosController < ApplicationController
 
     end
 
+
+    def edit
+      @artigo = Artigo.find(params[:id])
+
+    end
+
+
     def create
       @artigo = Artigo.new(params.require(:artigo).permit(:nome, :descricao))
       if @artigo.save 
@@ -20,6 +27,20 @@ class ArtigosController < ApplicationController
         redirect_to @artigo
       else
         render :new, status: :unprocessable_entity
+      end
+    end
+
+
+
+
+
+    def update
+      @artigo = Artigo.find(params[:id])
+      if @artigo.update(params.require(:artigo).permit(:nome, :descricao))
+        flash[:notice] = "O Artigo foi editado com sucesso"
+        redirect_to @artigo
+      else
+        rende :edit
       end
     end
 

@@ -1,0 +1,27 @@
+<h1>Editar um Artigo</h1>
+
+<% if @artigo.errors.any? %>
+    <ul>
+        <% @artigo.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_with model: @artigo  do |f| %>
+
+<p>
+    <%= f.label :nome %> <br>
+    <%= f.text_field :nome %>
+</p>
+
+<p>
+    <%= f.label :descricao %> <br>
+    <%= f.text_area :descricao %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+
+<% end %>

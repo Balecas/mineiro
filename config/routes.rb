@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/teste', to: 'paginas#teste'
 
-  resources :artigos, only: [:show, :index, :new, :create]
+  resources :artigos, only: [:show, :index, :new, :create, :edit, :update]
   
 
   # Defines the root path route ("/")
