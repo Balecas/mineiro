@@ -10,10 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  
   <body>
-    <% flash.each do |name, msg| %>
-      <%= msg %>
-    <% end %>
+    
+    <%= render 'layouts/navigation'  %>
+    <%= render 'layouts/mensagens'  %>
+
     <%= yield %>
   </body>
 </html>
